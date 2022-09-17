@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit = no">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <%- include('partials/header',{
+        currentUser : activeUser,
+        definedControl : definedControl,
+    }) %>
+    <div class="myContainer">
+        
+
+        <div class="leftPane">
+            <div class="leftHeader">
+                <h4 class="headTitle"> Task List....</h4>
+            </div>
+            <%- include('partials/todos',{allTodosforUser : allTodosforUser}) %>
+        </div>
+        <div class="rightPane">
+            <div class="rightHeader">
+                <h4 class="headTitle">Task Form....</h4>
+            </div>
+            <div class="rightBody">
+                <form class="addTodoForm" name = "addTodoForm" action="/todos/add-todo" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" name="taskName" id="taskName" placeholder="Task Name..." autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control-file" type="file" name="taskImg" id="taskImg" required>
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Add ToDo">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

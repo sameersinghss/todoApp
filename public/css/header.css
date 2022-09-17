@@ -1,0 +1,51 @@
+.headRow {
+    height: 10vh;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    align-items: center;
+    box-shadow: 0px 3px 5px 2px lightgray;
+}
+
+.head{
+    margin-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+}
+
+.userControls {
+    margin-right : 10px;
+    width: 170px;
+    height: 40px;
+}
+
+.userName {
+    display: inline-block;
+    width: 80px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 40px;
+    text-align: right;
+}
+
+.actionBtn {
+    float: right;
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    background-color: rgba(80, 97, 222, 0.564);
+}
+
+form{
+    display: inline;
+}
+
+.actionBtn:hover, button:focus-visible{
+    outline: none;
+    border: 3px solid #0269c2bf;
+}

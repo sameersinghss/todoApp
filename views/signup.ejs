@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="../css/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h4>Sign up</h4>
+        </div>
+        <div class="body">
+            <form class="userForm" action="/user/signup" method="post" name="signUpForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="input-field" type="text" name="username" id="username"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="input-field" type="text" name="userName" id="userName" pattern="[A-Za-z0-9]?"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input class="input-field" type="text" name="password" id="password" pattern="[A-Za-z0-9]?"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input class="input-field" type="text" name="confirmPassword" id="confirmPassword"
+                        pattern="[A-Za-z0-9]?" autocomplete="off">
+                </div>
+                <p class="errormsg">Password Mismatch</p>
+                <div class="form-group">
+                    <input class="btn" type="button" value="Sign Up" id="signupBtn">
+                </div>
+            </form>
+            <p class="registerUser">Already signed Up? <a href="/user/login">Login</a></p>
+        </div>
+    </div>
+</body>
+
+<script src="../scripts/signup.js"></script>
+
+</html>

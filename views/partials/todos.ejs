@@ -1,0 +1,25 @@
+<div id="taskConatiner">
+    <% allTodosforUser.forEach((elem,index)=>{ %>
+        <div class="taskRows <%= elem.status? 'finished' : 'pending' %>" id="task-<%= index+1 %>">
+            <span class="taskText">
+                <%= elem.taskName %>
+            </span>
+            <span class="taskImage"><img src="../uploads/<%= elem.img %>" alt="taskImage"></span>
+            <span class="controls">
+                <form class="controlForm" method="POST" action="/todos/change-todo">
+                    <input type="hidden" name="itemChanged" value="<%= elem._id %>">
+                <input type="checkbox" class="checkbox" onchange="this.form.submit()"
+                    id="completed-<%= index+1 %>" <%=elem.status?'checked':'' %> >
+                </form>
+                <form class="controlForm" method="POST" action="/todos/remove-todo" name="remove-<%= index %>" >
+                    <input type="hidden" name="itemToRemove" value="<%= elem._id %>">
+                    <% if(!elem.status) { %>
+                        <span class="crossBtn" id="remove-<%= index+1 %>" onclick='document.forms["remove-<%= index %>"].submit()'>&#9747;</span>
+                    <%} else {%>
+                        <span class="crossBtn" id="remove-<%= index+1 %>" >&#9747;</span>
+                    <% } %>
+                    </form>
+            </span>
+        </div>
+    <% }) %>
+</div>
